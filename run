@@ -1,7 +1,7 @@
 #!/bin/sh
 
 apt-get update
-apt-get install expect
+apt-get --assume-yes  install expect
 /usr/bin/expect <<EOD
 spawn ssh pirate@9.1.75.112
 expect "password:"
