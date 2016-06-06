@@ -1,10 +1,5 @@
 #!/bin/sh
 
 apt-get update
-apt-get --assume-yes  install expect
-/usr/bin/expect <<EOD
-spawn ssh pirate@9.1.75.112
-expect "password:"
-send "hyperiot"
-expect eof
-EOD
+apt-get --assume-yes  install sshpass
+sshpass -p "hypriot" ssh pirate@9.1.75.112
