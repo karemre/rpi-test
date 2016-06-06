@@ -4,10 +4,10 @@ platform: linux
 image: docker:///ubuntu
 
 inputs: 
-  - rpi-test
+  - name: rpi-test
 
 params:
- build: rpi-test
+  build: rpi-test
 
 run:
  path: rpi-test/run
