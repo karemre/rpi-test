@@ -1,4 +1,2 @@
-spawn ssh pirate@9.1.75.112
-expect “password"
-send “hypriot”
-interact
+apt-get install sshpass
+sshpass -p 'hypriot' ssh pirate@9.1.75.112
