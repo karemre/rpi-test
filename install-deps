@@ -3,3 +3,4 @@
 apt-get update
 apt-get install -y make busybox python-pip
 pip install https://github.com/larsks/dockerize/archive/master.zip
+make build
