@@ -2,4 +2,4 @@
 
 apt-get update
 apt-get --assume-yes  install sshpass
-sshpass -p "hypriot" ssh pirate@9.1.75.112 pwd
+sshpass -p "hypriot" ssh pirate@9.1.75.112 ls 
