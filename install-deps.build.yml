@@ -1,0 +1,13 @@
+---
+platform: linux
+
+image: docker:///ubuntu
+
+inputs: 
+  - name: rpi-test
+
+params:
+  build: rpi-test
+
+run:
+ path: rpi-test/install-deps
