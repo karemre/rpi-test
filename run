@@ -1,7 +1,7 @@
 #!/bin/sh
 
 apt-get update
-apt-get --assume-yes  install -y sshpass
+apt-get --assume-yes  install -y apt-utils sshpass
 sshpass -p "hypriot" ssh  pirate@9.1.75.112 "DEBIAN_FRONTEND=noninteractive apt-get --assume-yes autoremove" 
 sshpass -p "hypriot" ssh  pirate@9.1.75.112 "docker stop $(docker ps -q --filter ancestor=eyigitoglu/raspberrypitest)"
 sshpass -p "hypriot" ssh  pirate@9.1.75.112 "docker run -d -p 80:80 eyigitoglu/raspberrypitest ."
