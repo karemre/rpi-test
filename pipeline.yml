@@ -3,8 +3,8 @@ jobs:
   public: true
   serial: true
   plan:
-    # - get: rpi-test
-    #   trigger: true
+    - get: rpi-test
+      trigger: true
     # - put: docker-hub
     #   params:
     #     build: rpi-test

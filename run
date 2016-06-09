@@ -1,8 +1,18 @@
 #!/bin/sh
 
 apt-get update
-apt-get --assume-yes  install -y apt-utils dialog 
-apt-get --assume-yes  install -y  sshpass
-sshpass -p "hypriot" ssh  pirate@9.1.75.112 "DEBIAN_FRONTEND=noninteractive apt-get --assume-yes autoremove" 
-sshpass -p "hypriot" ssh  pirate@9.1.75.112 "docker stop $(docker ps -q --filter ancestor=eyigitoglu/raspberrypitest)"
-sshpass -p "hypriot" ssh  pirate@9.1.75.112 "docker run -d -p 80:80 eyigitoglu/raspberrypitest ."
+
+apt-get --assume-yes install build-essential expect
+
+
+/usr/bin/expect <<EOD
+spawn ssh pirate@9.1.75.112 "docker ps"
+expect "pirate@9.1.75.112's password:"
+send "hypriot \n"
+expect eof
+EOD
+
+# sshpass -p "hypriot" ssh  pirate@9.1.75.112 "docker run -d -p 80:80 eyigitoglu/raspberrypitest ."
+
+
+# spawn ssh pirate@9.1.75.112 "docker stop $(docker ps -q --filter ancestor=eyigitoglu/raspberrypitest)"
