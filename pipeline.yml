@@ -1,0 +1,26 @@
+jobs:
+- name: deploy
+  public: true
+  serial: true
+  plan:
+    - get: rpi-test
+      trigger: true
+    - put: docker-hub
+      params:
+        build: rpi-test
+    - task: install-sshpass
+      privileged: true
+      file: rpi-test/run.build.yml
+
+resources:
+- name: rpi-test
+  type: git
+  source:
+    uri: https://github.com/karemre/rpi-test.git
+- name: docker-hub
+  type: docker-image
+  source:
+    email: yigitogluemre@gmail.com
+    username: eyigitoglu
+    password: raspberryPi
+    repository: eyigitoglu/raspberrypitest
