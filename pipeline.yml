@@ -3,11 +3,11 @@ jobs:
   public: true
   serial: true
   plan:
-    - get: rpi-test
-      trigger: true
-    - put: docker-hub
-      params:
-        build: rpi-test
+    # - get: rpi-test
+    #   trigger: true
+    # - put: docker-hub
+    #   params:
+    #     build: rpi-test
     - task: install-sshpass
       privileged: true
       file: rpi-test/run.build.yml
