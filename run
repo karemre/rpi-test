@@ -8,7 +8,7 @@ chmod 600 ./rpi-test/id_rpi_rsa
 ssh-add ./rpi-test/id_rpi_rsa
  # ssh  pirate@9.1.75.112 "docker run -d -p 80:80 eyigitoglu/raspberrypitest ."
 
-
- ssh -o StrictHostKeyChecking=no pirate@9.1.75.36 "docker stop $(docker ps -q --filter ancestor=eyigitoglu/raspberrypitest)"
+containerID=$(ssh -o StrictHostKeyChecking=no pirate@9.1.75.36 "docker ps -q --filter ancestor=eyigitoglu/raspberrypitest")
+ ssh -o StrictHostKeyChecking=no pirate@9.1.75.36 "docker stop $containerID"
 
  ssh -o StrictHostKeyChecking=no pirate@9.1.75.36 "docker run -d -p 80:80 eyigitoglu/raspberrypitest"
