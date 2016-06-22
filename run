@@ -1,5 +1,5 @@
 #!/bin/sh
 
 apt-get update
-apt-get install curl
+apt-get install -y curl
 curl -X POST  http://198.4.83.52:8080/requests
