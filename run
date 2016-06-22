@@ -2,4 +2,4 @@
 
 apt-get update
 apt-get install -y curl
-curl -X POST  http://198.4.83.52:8080/requests
+curl -X POST  http://9.1.189.99:8080/requests
