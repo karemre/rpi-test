@@ -2,4 +2,4 @@
 
 apt-get update
 apt-get install -y curl
-curl -i -F name=configuration.jpg -X POST http://9.1.189.99:8080/requests
+curl -i -F name=configuration.jpg -X POST http://9.1.188.215:8080/requests
