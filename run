@@ -2,4 +2,4 @@
 
 apt-get update
 apt-get install -y curl
-curl -i -F config=@configuration.json -X POST http://9.1.188.215:8080/requests
+curl -i -F config=@configuration.txt -X POST http://9.1.188.215:8080/requests
