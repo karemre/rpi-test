@@ -2,6 +2,4 @@
 
 apt-get update
 apt-get install -y curl
-pwd
-ls
-curl -i -F config=@configurationfdds.txt -X POST http://9.1.188.215:8080/requests
+curl -i -F config=@rpi-test/configuration.json -X POST http://9.1.188.215:8080/requests
