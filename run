@@ -2,4 +2,4 @@
 
 apt-get update
 apt-get install -y curl
-curl -i -H "Content-Type: application/json" --data @rpi-test/configuration.json -X POST http://9.1.189.154:8080/requests
+curl -i --data @rpi-test/configuration.json -X POST http://9.1.189.154:8080/requests
